@@ -1,0 +1,3 @@
+
+1. Enter only 1 line in the description.
+2. Don't show upload error on experiences page because it won't reload the input boxes.

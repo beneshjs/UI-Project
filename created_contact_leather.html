@@ -1,0 +1,74 @@
+<!-- Jennifer Benesh -->
+<!-- Rev 0 11/25/2018 -->
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="created_leather.css">
+    <script>
+    function readfileautomatically () {
+        var client = new XMLHttpRequest();
+        client.open('GET', '/~beneshjs/User_Interface/project/uploads/data.txt');
+        client.onreadystatechange = function()
+        {
+            if( client.responseText != '' )
+            {
+                var txt = client.responseText.split("\n");
+                document.getElementById("firstname").innerHTML = txt[0];
+                document.getElementById("lastname").innerHTML = txt[1];
+                document.getElementById("firstname1").innerHTML = txt[0];
+                document.getElementById("lastname1").innerHTML = txt[1];
+            }
+        }
+        client.send();
+        }
+        function readfileautomatically1 () {
+        var client = new XMLHttpRequest();
+        client.open('GET', '/~beneshjs/User_Interface/project/uploads/contact.txt');
+        client.onreadystatechange = function()
+        {
+            if( client.responseText != '' )
+            {
+                var txt = client.responseText.split("\n");
+                document.getElementById("phonenumber").innerHTML = txt[0];
+                document.getElementById("email").innerHTML = txt[1];
+            }
+        }
+        client.send();
+        }
+    </script>
+    
+</head>
+<body onload="readfileautomatically();readfileautomatically1();">
+
+<div class="header">
+<span id="firstname"></span> <span id="lastname"></span>
+</div>
+
+<div class="nav-background">
+<ul>
+  <li><a class="active" href="/~beneshjs/User_Interface/project/created_homepage_leather.php">Home</a></li>
+  <li><a href="/~beneshjs/User_Interface/project/created_experiences_leather.php">Experiences</a></li>
+  <li><a href="/~beneshjs/User_Interface/project/created_resume_leather.html">Resume</a></li>
+  <li><a href="/~beneshjs/User_Interface/project/created_contact_leather.html">Contact</a></li>
+</ul>
+</div>
+
+<div id="wrapper">
+    <img src="images/contact.jpg" style="float: right; padding-right:30px; padding-top:40px;">
+    <br>
+    <h1>Contact Me</h1>
+    <h2>Let's Start Working Together!</h2>
+   
+    <div class="center_text">
+    
+    Feel free to contact me at:<br><br><b><span id="firstname1"></span> <span id="lastname1"></span></b><br><br>
+    <b>Phone:</b><br><span id="phonenumber" align="right"></span><br><br>
+    <b>Email:</b><br> <span id="email" align="right"></span>
+    </div>
+
+    <br><br><br><br>
+</div>
+
+
+</body>
+</html>

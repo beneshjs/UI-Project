@@ -1,0 +1,51 @@
+<!-- Jennifer Benesh -->
+<!-- Rev 0 11/25/2018 -->
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="created_lavendar.css">
+    <script>
+    function readfileautomatically () {
+        var client = new XMLHttpRequest();
+        client.open('GET', '/~beneshjs/User_Interface/project/uploads/data.txt');
+        client.onreadystatechange = function()
+        {
+            if( client.responseText != '' )
+            {
+                var txt = client.responseText.split("\n");
+                document.getElementById("firstname").innerHTML = txt[0];
+                document.getElementById("lastname").innerHTML = txt[1];
+                document.getElementById("homedescription").innerHTML = txt[2];
+            }
+        }
+        client.send();
+        }
+    </script>
+    
+</head>
+<body onload="readfileautomatically();">
+
+<div class="header">
+<span id="firstname"></span> <span id="lastname"></span>
+</div>
+
+<div class="nav-background">
+<ul>
+  <li><a class="active" href="/~beneshjs/User_Interface/project/created_homepage_lavendar.php">Home</a></li>
+  <li><a href="/~beneshjs/User_Interface/project/created_experiences_lavendar.php">Experiences</a></li>
+  <li><a href="/~beneshjs/User_Interface/project/created_resume_lavendar.html">Resume</a></li>
+  <li><a href="/~beneshjs/User_Interface/project/created_contact_lavendar.html">Contact</a></li>
+</ul>
+</div>
+
+<div id="wrapper">
+    <br>
+    <h1 style="text-align:center;">Resume</h1>
+    <p style="text-align:center;"><embed src="uploads/resume.pdf" type='application/pdf' width="725" height="600"></p>
+
+    <br><br><br><br>
+</div>
+
+
+</body>
+</html>

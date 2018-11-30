@@ -1,0 +1,22 @@
+/* Jennifer Benesh 
+Rev 0 11/25/2018 
+*/
+/* HIDE RADIO */
+[type=radio] { 
+  display:none;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  outline: 3px solid #00f;
+}
+
+#nofocus{
+	
+	border: 3px solid #00f;
+}
